@@ -59,8 +59,8 @@ include('../includes/haut.php'); //contient le doctype, et head.
 			</div>
 
 <!-- prérampli les champs corrects en cas d'erreurs de façon à ne pas tout retaper -->
-			<?php
-			if($_SESSION['erreurs'] > 0)
+		<?php
+			if(array_key_exists('erreurs', $_SESSION) AND ($_SESSION['erreurs'] > 0))
 			{
 			?>
 			<div class="border-red">
@@ -85,7 +85,7 @@ include('../includes/haut.php'); //contient le doctype, et head.
 			</div>
 			<?php
 			}
-			?>
+	?>
 			
 			<h1>Formulaire d'inscription</h1>
 			<p>Bienvenue sur la page d'inscription de mon site !<br/>

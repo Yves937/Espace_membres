@@ -34,12 +34,12 @@ include('includes/haut.php'); //contient le doctype, et head.
                 
         <div id="contenu">
                 <div id="map">
-                        <a href="../index.php">Accueil</a> => <a href="stats.php?see=connectesé"&a="<?php echo intval($_GET['a']); ?>">Liste des connectés</a>
+                        <a href="../index.php">Accueil</a> => <a href="stats.php?see=connectes"&a="<?php echo intval($_GET['a']); ?>">Liste des connectés</a>
                 </div>
                         
                 <h1>Liste des connectés</h1>
 <?php
-                if($_GET['a'] == 1)
+                if(array_key_exists('a', $_GET['a'] == 1))
                 {
                         $id = '';
                 }
@@ -59,6 +59,7 @@ include('includes/haut.php'); //contient le doctype, et head.
                 LEFT JOIN membres ON membre_id = connectes_id
                 WHERE connectes_actualisation > ".(time()-300).$id."
                 ORDER BY connectes_actualisation DESC", 2);
+var_dump($_GET['a']);
 ?>
 
 <!--menu//-->
